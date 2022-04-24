@@ -6,7 +6,7 @@ async function vdp(url, dev = false) {
     const URL = "https://videodownloaderpro.net/en5/";
     browser = await puppeteer.launch({
       headless: !dev,
-      args: ["--disable-setuid-sandbox", "--disable-notifications"],
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
       ignoreHTTPSErrors: true,
     });
     const page = await browser.newPage();
@@ -72,7 +72,7 @@ function insta(url, dev) {
       const URL = "https://snapinsta.app/";
       browser = await puppeteer.launch({
         headless: !dev,
-        args: ["--disable-setuid-sandbox", "--disable-notifications"],
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
         ignoreHTTPSErrors: true,
       });
       const page = await browser.newPage();
